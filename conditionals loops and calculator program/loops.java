@@ -15,10 +15,10 @@ public class loops {
             i++;
         }
         System.out.println("Do while loop");
-        i=0;
-        do{                                      //do-while loop
-            System.out.println("hello "+(i+1));
-            i++;
+        i=1;
+        do{                                      //do-while loop excetues ones without checking the condition
+            System.out.println("hello world");
+            
         }while(i!=1); //prints hello 1
     }
 }
