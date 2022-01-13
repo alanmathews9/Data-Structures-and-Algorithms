@@ -96,5 +96,38 @@ print("Achyuth" in course)
 # prints false since its absent
 
 # NUMBERS
+x=10
+print(x)
+# prints 10
+x=0b10
+print(x)
+# prints 2 since binary
+x=2
+print(bin(x))
+# prints the binary of 2
+x=0x12c
+print(x)
+# gives 300
+
+x=3+ 2j
+# complex number 3+ 2i
+
+# ARITHMETIC OPERATORS(+,-,%,/,*,**)
+# WORKING WITH NUMBERS
+PI=3.14
+print(PI)
+# this is constant and should not  be modified and here we dont have const unlike c
+print(round(PI))
+# gives 3
+print(abs(PI))
+
+# gives 3.14 also removes negative sign if its negative number
+# google python 3 built in functions
+import math
+print(math.floor(PI))
+# this prints 3
+# search python 3 math module
+
+# type conversions
 
 
