@@ -1,5 +1,8 @@
 # variables in python
 
+from multiprocessing import cpu_count
+
+
 n=1000
 rating=49.9999
 isit=False
@@ -79,3 +82,19 @@ last="Hamedani"
 full=f"{first} {last}"
 print(full)
 # prints Mosh Hamedani
+course=" python programmimg"
+print(course.upper())
+print(course.lower())
+# prints in lower and upper
+print(course.strip())
+# prints the string by removing the initial white space
+print(course.find("pro"))
+# to find the index of a character or sub-string
+print(course.replace("p","s"))
+# this replaces all "p" s with "s" sython srogrammimg
+print("Achyuth" in course)
+# prints false since its absent
+
+# NUMBERS
+
+
