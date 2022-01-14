@@ -1,6 +1,9 @@
 # variables in python
 
+from ast import If
 from multiprocessing import cpu_count
+from operator import truediv
+from socket import if_indextoname
 
 
 n=1000
@@ -129,5 +132,81 @@ print(math.floor(PI))
 # search python 3 math module
 
 # type conversions
+# x=input("x: ")
+# x=int(x)
+# y=x+1
+# print(y)
+# when we simply input then it will accept as a string
+# implicit type conversion functions
+
+# int()
+# float()
+# bool()
+# str()
+
+# CONDITIONALS
+age=22
+if age>=18:
+    print("aged")
+elif age>=13:
+    print("teenager")
+else:
+    print("minor")
+
+# LOGICAL OPERATORS
+# AND ,OR ,NOT
+name="Mosh"
+if not name:
+    print("Name is empty")
+else:
+    print("non empty")
+# since ""is false equivalent
+age=22
+if age>=18 and age<65:
+    print("Eligible")
+# OR
+if 18<=age<65:
+    print("Eligible")
+
+# TERNARY OPERATOR
+message="eligible" if age>=18 else "Not eligible"
+print(message)
+# FOR LOOPS
+# for x in "python":
+#     print(x)
+# for x in ['a','a','b','c']:
+#     print(x)
+for x in range(5):
+    print(x)
+# prints 0-4
+for x in range(0,10,2):
+    print(x)
+# this prints all even numbers since it produces an AP with d=2
+# range is basically a class 
+# FOR..ELSE
+names=["Johns","Mary"]
+flag=False
+for name in names:
+    if name.startswith("K"):
+        print("Found")
+        flag=True
+        break
+else:
+        print("Not found")
+
+# WHILE LOOPS
+# guess=0
+# answer=5
+# while answer!=guess:
+#     guess=int(input("Guess: "))
+# else: 
+#     pass
+# FUNCTIONS
+def increment(number,by):
+    return (number,number+by)
+(a,b)=increment(2,3)
+print(a)
+print(b)
+# print(increment(2,3)) this prints(2,5)
 
 
