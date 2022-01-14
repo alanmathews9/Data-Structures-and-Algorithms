@@ -1,6 +1,7 @@
 # variables in python
 
 from ast import If
+from audioop import mul
 from multiprocessing import cpu_count
 from operator import truediv
 from socket import if_indextoname
@@ -209,4 +210,15 @@ print(a)
 print(b)
 # print(increment(2,3)) this prints(2,5)
 
+# ARGS
+# def multiply(*list):
+#    total=1
+#    for number in list:
+#        total=total*number
+#     return (total)
+# print(multiply(2,3,4,5))
+def save_user(**user):
+    print(user)
 
+save_user(id=1,name="admin")
+# prints {'id': 1, 'name': 'admin'}
