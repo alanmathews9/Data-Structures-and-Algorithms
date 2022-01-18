@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
+    //ASCENDING ORDER.
     public static void main(String []args){
         Scanner input=new Scanner(System.in);
         System.out.println("enter the array size: ");
@@ -15,7 +16,12 @@ public class Main {
         int target=input.nextInt();
 
         int res=Bsearch(a, target);
-        System.out.println(res);
+        if(res==-1){
+            System.out.println("Not found!!");
+        }
+        else{
+            System.out.println(res);
+        }
     }
     static int Bsearch(int []a, int target){
         int start=0;
