@@ -1,7 +1,7 @@
 public class OrderAgnostic {
     public static void main(String[] args) {
-        int a[]={1,2,3,4,5,6,7,8,9};
-        int res=search(a, 7);
+        int a[]={1,2,4,5,7,8,9,12,13,14,16};
+        int res=search(a,1);
         System.out.println(res);
     }
     static int search(int []a,int target){
@@ -32,7 +32,9 @@ public class OrderAgnostic {
                 }
            }
         }
-        return -1;
+        // return a[start]; //minimum element greater than or equal to target(ceiling)
+        // return a[end]; //floor finding 
+        return -1;//if not found in bsearch
     }
     }
 
