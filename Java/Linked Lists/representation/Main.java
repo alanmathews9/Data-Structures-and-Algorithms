@@ -116,6 +116,23 @@ class ll{
         }
         
     }
+    void deletePos(int pos){
+        if(head==null){
+            System.out.println("Empty..");
+        }
+        else if(pos>size||pos<=0){
+            System.out.println("Invalid pos");
+        }
+        else{
+            Node temp=head;
+            int i=1;
+            while(i<pos-1){
+                temp=temp.next;
+            }
+            temp.next=temp.next.next;
+            size--;
+        }
+    }
     public void deleteLast(){
         if(head==null){
             System.out.println("Empty..");
@@ -158,7 +175,7 @@ class Main{
         ll linked=new ll();
         int state=0;
         while(state==0){
-            System.out.println("1. Enter the data 2. display 3. exit.. 4. Insert end 5. insert after pos 6. Insert at pos 7.Delete first 8. delete last Enter the coice: ");
+            System.out.println("1. Enter the data 2. display 3. exit.. 4. Insert end 5. insert after pos 6. Insert at pos 7.Delete first 8. delete last 9. delete pos Enter the coice: ");
             int ch;
             ch=sc.nextInt();
             switch(ch){
@@ -211,6 +228,13 @@ class Main{
                 }
                 case 8:{
                     linked.deleteLast();
+                    break;
+                }
+                case 9:{
+                    System.out.println("Enter the pos to be deleted: ");
+                    int pos;
+                    pos=sc.nextInt();
+                    linked.deletePos(pos);
                     break;
                 }
 
