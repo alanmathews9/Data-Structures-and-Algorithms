@@ -64,14 +64,16 @@ class ll{
         }
         else if(pos==1){
             insertFirst(x);
+            size++;
         }
         else if(pos==size){
             insertEnd(x);
+            size++;
         }
         else{
             Node newnode=new Node(x);
             int i=1;
-            Node temp=new Node(x);
+            Node temp=head;
             while(i<pos-1){
                 i++;
                 temp=temp.next;
@@ -79,6 +81,7 @@ class ll{
             }
             newnode.next=temp.next;
             temp.next=newnode;
+            size++;
         }
     }
     public void display(){
@@ -93,6 +96,46 @@ class ll{
             }
         }
         
+    }
+    public void deleteFirst(){
+        Node temp=head;
+        if(head==null){
+            System.out.println("Empty..");
+        }
+        else if(head==tail){
+            System.out.println("Deleting: "+head.value);
+            head=tail=null;
+
+            size--;
+        }
+        else{
+            System.out.println("Deeleting: "+head.value);
+            head=head.next;
+            temp.next=null;
+            size--;
+        }
+        
+    }
+    public void deleteLast(){
+        if(head==null){
+            System.out.println("Empty..");
+
+        }
+        else if(head==tail){
+            System.out.println("Deleting: "+tail.value);
+            head=tail=null;
+            size--;
+        }
+        else{
+            System.out.println("Deleting: "+tail.value);
+            Node temp=head;
+            while(temp.next!=tail){
+                temp=temp.next;
+            }
+            temp.next=null;
+            tail=temp;
+            size--;
+        }
     }
     private class Node{
         private int value;
@@ -115,7 +158,7 @@ class Main{
         ll linked=new ll();
         int state=0;
         while(state==0){
-            System.out.println("1. Enter the data 2. display 3. exit.. 4. Insert end 5. insert after pos 6. Insert at pos Enter the coice: ");
+            System.out.println("1. Enter the data 2. display 3. exit.. 4. Insert end 5. insert after pos 6. Insert at pos 7.Delete first 8. delete last Enter the coice: ");
             int ch;
             ch=sc.nextInt();
             switch(ch){
@@ -162,6 +205,15 @@ class Main{
                     linked.addBeforePos(pos, item);
                     break;
                 }
+                case 7:{
+                    linked.deleteFirst();
+                    break;
+                }
+                case 8:{
+                    linked.deleteLast();
+                    break;
+                }
+
             }
 
         }
