@@ -154,9 +154,9 @@ class ll{
             size--;
         }
     }
-    private class Node{
-        private int value;
-        private Node next;
+     class Node{
+        int value;
+        Node next;
         
         public Node(int value){
             this.value=value;
