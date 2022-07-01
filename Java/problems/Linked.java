@@ -50,6 +50,44 @@ class ll{
             }
         }
     }
+    void getsize(){
+        System.out.println("Size: "+this.size);
+    }
+    void deleteFront(){
+        if(head==null){
+            System.out.println("Nothing to delete");
+        }
+        else if(head==tail){
+            System.out.println("Deleted: "+head.data);
+            head=tail=null;
+        }
+        else{
+            Node temp=head;
+            head=head.next;
+            System.out.println("Deleted: "+temp.data);
+        }
+    }
+
+    void deleteend(){
+        if(head==null){
+            System.out.println("Nothing to delete");
+        }
+        else if(head==tail){
+            System.out.println("Deleted: "+head.data);
+            head=tail=null;
+        }
+        else{
+            Node temp=head;
+            Node temp2=temp;
+            while(temp!=tail){
+                temp2=temp;
+                temp=temp.next;
+            }
+            System.out.println("Deleted: "+temp.data);
+            temp2.next=null;
+
+        }
+    }
     class Node{
         int data;
         Node next;
@@ -68,7 +106,7 @@ public class Linked {
         Scanner sc=new Scanner(System.in);
         int state=0;
         while(state==0){
-            System.out.println("1.Add front 2. Add end 3. display 4.exit : ");
+            System.out.println("1.Add front 2. Add end 3. display 4.exit 5. get size  6.delete front 7.delete rear: ");
             int choice;
             choice=sc.nextInt();
             switch(choice){
@@ -92,6 +130,18 @@ public class Linked {
                 }
                 case 4:{
                     state=1;
+                    break;
+                }
+                case 5:{
+                    linked.getsize();
+                    break;
+                }
+                case 6:{
+                    linked.deleteFront();
+                    break;
+                }
+                case 7:{
+                    linked.deleteend();
                     break;
                 }
             }
