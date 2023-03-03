@@ -94,11 +94,43 @@ public class BinaryTree{
             if(root==null){
                 return 0;
             }
-            int leftHeight=heightCalculate(root.left);
-            int rightHeight=heightCalculate(root.right);
-            int reqHeight=Math.max(leftHeight,rightHeight)+1;
-            return reqHeight;
+           int leftHeight=heightCalculate(root.left);
+           int rightHeight=heightCalculate(root.right);
+           return(Math.max(leftHeight,rightHeight)+1);
         }
+        public static int diameter(Node root){
+            if(root==null){
+                return 0;
+            }
+            int diam1=diameter(root.left);
+            int diam2=diameter(root.right);
+            int diam3=diam1+diam2+1;
+            return(Math.max(diam1,Math.max(diam2, diam3)));
+        }
+        
+    }
+    static class TreeInfo{
+        int ht;
+        int diam;
+        TreeInfo(int ht,int diam){
+            this.ht=ht;
+            this.diam=diam;
+        }
+    }
+    public static TreeInfo diameter2(Node root){
+        if(root==null){
+           return new TreeInfo(0,0);
+        }
+        TreeInfo left=diameter2(root.left);
+        TreeInfo right=diameter2(root.right);
+        int myHeight=Math.max(left.ht,right.ht)+1;
+
+        int diam1=left.diam;
+        int diam2=right.diam;
+        int diam3= left.ht+right.ht+1;
+        int myDiam=Math.max(diam1,Math.max(diam2,diam3));
+        TreeInfo resultInfo=new TreeInfo(myHeight, myDiam);
+        return resultInfo;
     }
     public static void main(String[] args) {
       Bt tree=new Bt();
@@ -125,5 +157,12 @@ public class BinaryTree{
       System.out.println();
       System.out.println("Height: ");
       System.out.println(tree.heightCalculate(root));
+      System.out.println();
+      System.out.println("Diameter: ");
+      System.out.println(tree.diameter(root));
+      System.out.println();
+      System.out.println("Aproach 2: ");
+      System.out.println(diameter2(root).diam);
+
     }
 }
