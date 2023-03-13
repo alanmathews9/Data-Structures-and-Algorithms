@@ -36,7 +36,7 @@ public class Main {
 
     public static void bfs(ArrayList<Edge> graph[],int v) {
         Queue<Integer> q = new LinkedList<>();
-        q.offer(0);
+        q.add(0);
         boolean vis[] = new boolean[7];
         for (int i = 0; i < v; i++) {
             vis[i] = false;
